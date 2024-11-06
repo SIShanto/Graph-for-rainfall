@@ -7,7 +7,7 @@ from matplotlib import style
 
 #using dpi for better resolution of graph
 plt.rcParams['savefig.dpi']= 350
-df= pd.read_excel('C:\\Users\\SHANTO-PC\\OneDrive\\Desktop\\Paper Work Touhid Sir\\Data\\Daily rainfall trial\\2004 to 2007 comple.xlsx')
+df= pd.read_excel('2004 to 2007 comple.xlsx')
 
 x= df["DATE"]
 y= df["RAINFALL "]
