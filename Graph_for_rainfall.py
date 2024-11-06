@@ -28,17 +28,22 @@ plt.xticks(fontsize=16,fontweight='bold')
 
 ax.xaxis.set_major_formatter(mdates.DateFormatter('%b,%Y'))
 ax.tick_params(bottom=True,labelbottom=True)
-ax.tick_params(axis='x', labelrotation=21, color='black', labelcolor='black')
-plt.legend(frameon=False,loc=(577/1453,108/200),fontsize=15)
+ax.tick_params(axis='x', labelrotation=21, color='black', labelcolor='black', width=3)
+ax.tick_params(axis='y', labelrotation=0, color='black', labelcolor='black', width=3)
+plt.legend(frameon=False,loc=(576.9/1453,107.9/200),fontsize=15)
 # plt.gca().set_facecolor('white')
 
 # for observed graph
 b=df["FLOW-OBSERVED (M3/S)"]
 bx=ax.twinx()
+
 bx.plot(x,b, color='green',label='Observed-Flow (m\u00b3/s)')
+bx.set_ylabel("Flow (m\u00b3/s)", rotation=90, labelpad=22, fontsize=20, color='black',fontweight='bold')
+bx.tick_params(axis='y', labelrotation=0, color='black', labelcolor='black', width=3)
 
 for line in ['left','bottom','top','right']:  # for making every side line visible
     bx.spines[line].set_color('black')
+    bx.spines[line].set_linewidth(1.5)
     
 bx.set(ylim=(None,22000))
 # bx.set_yticks([])
@@ -51,7 +56,6 @@ plt.plot(x,c,'--',color='red', label='Simulated-Flow (m\u00b3/s)')
 plt.ylim((None,22000))
 
 plt.yticks(fontsize=17, color='black',fontweight='bold')
-plt.ylabel("Flow (m\u00b3/s)", rotation=90, labelpad=22, fontsize=20, color='black',fontweight='bold')
 
 plt.grid(False)
 plt.legend(frameon=False, loc='center',fontsize=15)
