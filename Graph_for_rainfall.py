@@ -5,8 +5,10 @@ import matplotlib.cbook as cbook
 import matplotlib.dates as mdates
 from matplotlib import style
 
+#setting the dpi of graph for higher resolution
 plt.rcParams['savefig.dpi']= 800
 
+#now loading the excel file
 df= pd.read_excel('2004 to 2007 comple.xlsx')
 
 x= df["DATE"]
