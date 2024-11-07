@@ -6,7 +6,7 @@ import matplotlib.dates as mdates
 from matplotlib import style
 
 #using dpi for better resolution of graph
-plt.rcParams['savefig.dpi']= 350
+plt.rcParams['savefig.dpi']= 410
 df= pd.read_excel('2004 to 2007 comple.xlsx')
 
 x= df["DATE"]
@@ -23,12 +23,12 @@ ax.invert_yaxis()
 
 ax.set_ylabel("Rainfall (mm)", rotation=90, labelpad=20, fontsize=20, color='black', fontweight='bold')
 plt.yticks(fontsize=17, color='black',fontweight='bold')
-plt.xlabel('Date', fontsize= 20, labelpad=11, color='black', fontweight='bold')
+plt.xlabel('Date', fontsize= 20, labelpad=9, color='black', fontweight='bold')
 plt.xticks(fontsize=16,fontweight='bold')
 
 ax.xaxis.set_major_formatter(mdates.DateFormatter('%b,%Y'))
 ax.tick_params(bottom=True,labelbottom=True)
-ax.tick_params(axis='x', labelrotation=21, color='black', labelcolor='black', width=3)
+ax.tick_params(axis='x', labelrotation=17, color='black', labelcolor='black', width=3)
 ax.tick_params(axis='y', labelrotation=0, color='black', labelcolor='black', width=3)
 plt.legend(frameon=False,loc=(576.9/1453,107.9/200),fontsize=15)
 # plt.gca().set_facecolor('white')
